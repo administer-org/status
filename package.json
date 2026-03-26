@@ -1,0 +1,14 @@
+{
+  "name": "adm-status",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone Cloudflare Worker – ADM Software status page with D1-backed health monitoring and Discord webhook alerts.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}
