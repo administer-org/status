@@ -1,0 +1,18 @@
+name = "adm-status"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Cron trigger: run health checks every minute
+[triggers]
+crons = ["* * * * *"]
+
+# D1 database binding – must point to the same DB used by the gateway worker
+[[d1_databases]]
+binding  = "DB"
+database_name = "adm-status-db"
+database_id   = "YOUR_D1_DATABASE_ID"
+
+# Environment variables (set via `wrangler secret put` or the dashboard)
+# INSTANCES  – JSON array of { url, name } objects, e.g.:
+#   '[{"url":"https://gateway.admsoftware.org","name":"gateway"}]'
+# ALERT_WEBHOOK – Discord webhook URL for down/recovery/daily-report alerts
